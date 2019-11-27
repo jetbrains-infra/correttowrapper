@@ -4,7 +4,7 @@ s/@app.long.name@/javaapp/g
 
 /^APP_LONG_NAME="javaapp"/ a\
 \
-export JAVA_HOME=/usr/java64/current\
+export JAVA_HOME=/usr/lib/jvm/java-11-amazon-corretto/\
 export CATALINA_HOME=/home/javaapp/standalone\
 export CATALINA_BASE=$CATALINA_HOME\
 export TMP_DIR=$CATALINA_HOME/temp
