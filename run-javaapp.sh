@@ -9,9 +9,9 @@ do
     . ${prerun}
 done
 
-trap "/sbin/service javaapp stop" SIGINT SIGTERM SIGHUP
+trap "/usr/sbin/service javaapp stop" SIGINT SIGTERM SIGHUP
 
-/sbin/service javaapp console &
+/usr/sbin/service javaapp console &
 
 wait
 

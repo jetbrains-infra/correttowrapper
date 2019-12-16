@@ -10,7 +10,7 @@ ENV WRAPPER_URL http://wrapper.tanukisoftware.com/download/${WRAPPER_VER}/wrappe
 ADD wrapper.sed /
 
 RUN mkdir -p /home/javaapp/standalone/{bin,conf,lib,logs,temp} /root/prerun; \
-    yum install -y wget tar gzip && \
+    yum install -y wget tar gzip initscripts && yum clean all && \
     wget -O /home/javaapp/wrapper-linux-x86-64-${WRAPPER_VER}.tar.gz ${WRAPPER_URL} && \
     cd /home/javaapp && \
     tar -xzf wrapper-linux-x86-64-${WRAPPER_VER}.tar.gz && \
