@@ -1,10 +1,10 @@
-FROM amazoncorretto:11.0.5
+FROM amazoncorretto:11.0.13
 
 LABEL maintainer="Sergey Zhukov <sergey@jetbrains.com>" \
     maintainer="Sergey Kondrashov <sergey.kondrashov@jetbrains.com>"
 
 
-ENV WRAPPER_VER 3.5.27
+ENV WRAPPER_VER 3.5.46
 ENV WRAPPER_URL http://wrapper.tanukisoftware.com/download/${WRAPPER_VER}/wrapper-linux-x86-64-${WRAPPER_VER}.tar.gz
 
 ADD wrapper.sed /
