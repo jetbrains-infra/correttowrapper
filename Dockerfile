@@ -19,7 +19,7 @@ RUN mkdir -p /home/javaapp/standalone/{bin,conf,lib,logs,temp} /root/prerun; \
     mv wrapper/conf/wrapper.conf standalone/conf/ && \
     mv wrapper/lib/libwrapper.so standalone/lib/ && \
     mv wrapper/lib/wrapper.jar standalone/lib/ && \
-    sed -f /wrapper.sed < wrapper/src/bin/sh.script.in > /etc/init.d/javaapp && \
+    sed -f /wrapper.sed < wrapper/src/bin/App.sh.in > /etc/init.d/javaapp && \
     chmod a+x /etc/init.d/javaapp && \
     rm /wrapper.sed && \
     rm -rf wrapper && \
