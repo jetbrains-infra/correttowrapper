@@ -1,10 +1,10 @@
-FROM amazoncorretto:11.0.13
+FROM amazoncorretto:17.0.5
 
 LABEL maintainer="Sergey Zhukov <sergey@jetbrains.com>" \
     maintainer="Sergey Kondrashov <sergey.kondrashov@jetbrains.com>"
 
 
-ENV WRAPPER_VER 3.5.46
+ENV WRAPPER_VER 3.5.51
 ENV WRAPPER_URL http://wrapper.tanukisoftware.com/download/${WRAPPER_VER}/wrapper-linux-x86-64-${WRAPPER_VER}.tar.gz
 
 ADD wrapper.sed /
@@ -26,7 +26,7 @@ RUN mkdir -p /home/javaapp/standalone/{bin,conf,lib,logs,temp} /root/prerun; \
     rm wrapper-linux-x86-64-${WRAPPER_VER}.tar.gz
 
 # Adding cacerts file from current Java disto to "conf" directory of Tomcat
-RUN cp /usr/lib/jvm/java-11-amazon-corretto/lib/security/cacerts /home/javaapp/standalone/conf/truststore
+RUN cp /usr/lib/jvm/java-17-amazon-corretto/lib/security/cacerts /home/javaapp/standalone/conf/truststore
 ADD onbuild /home/javaapp/onbuild/
 ADD apply.sh /
 
